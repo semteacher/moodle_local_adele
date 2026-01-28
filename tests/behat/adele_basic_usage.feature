@@ -17,6 +17,7 @@ Feature: As an admin I perform basic adele actions - create, update, duplicate, 
       | user     | course | role           |
       | user     | C1     | student        |
       | teacher  | C1     | editingteacher |
+    And I change viewport size to "1366x1500"
 
   @javascript
   Scenario: Adele usage: admin create a new learning path
@@ -27,4 +28,7 @@ Feature: As an admin I perform basic adele actions - create, update, duplicate, 
     And I set the field "goalsubjectplaceholder" to "Test Learning Path Description"
     And I click on "Select learning path image" "button"
     And I click on ".image-selection-container .image-option-img" "css_element"
-    ##And I wait "30" seconds
+    And I wait "3" seconds
+    ##And I drag ".learning-path-nodes-container .nodes > div:first-child" "css_element" and I drop it in "[data-id=\"starting_node\"]" "css_element"
+    And I drag and drop HTML5 from ".learning-path-nodes-container .nodes > :first-child" to "[data-id=\"starting_node\"]"
+    And I wait "30" seconds
