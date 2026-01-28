@@ -30,5 +30,5 @@ Feature: As an admin I perform basic adele actions - create, update, duplicate, 
     And I click on ".image-selection-container .image-option-img" "css_element"
     And I wait "3" seconds
     ##And I drag ".learning-path-nodes-container .nodes > div:first-child" "css_element" and I drop it in "[data-id=\"starting_node\"]" "css_element"
-    And I drag and drop HTML5 from ".learning-path-nodes-container .nodes > :first-child" to "[data-id=\"starting_node\"]"
+    And I drag and drop HTML5 from ".learning-path-nodes-container .nodes > :first-child" to "[data-id='starting_node']"
     And I wait "30" seconds
