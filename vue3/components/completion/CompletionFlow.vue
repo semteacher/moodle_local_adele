@@ -71,7 +71,7 @@
               />
               <template #node-custom="{ data }">
                 <ConditionNode
-                  :data="data"
+                  :data="data.id+data.name+data.title+data.value"
                   :type="'completion'"
                   :learningpath="props.learningpath"
                   @update-visibility="handleVisibility"
@@ -81,12 +81,12 @@
               <template #node-dropzone="{ data }">
                 <DropzoneNode
                   :editorview="true"
-                  :data="data"
+                  :data="data.id+data.name+data.title+data.value"
                 />
               </template>
               <template #node-feedback="{ data }">
                 <FeedbackNode
-                  :data="data"
+                  :data="data.id+data.name+data.title+data.value"
                   :learningpath="learningpathcompletion"
                   :visibility="visibility_emitted"
                   @update-feedback="handleFeedback"

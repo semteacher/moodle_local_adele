@@ -70,7 +70,7 @@
               />
               <template #node-custom="{ data }">
                 <ConditionNode
-                  :data="data"
+                  :data="data.id+data.name+data.title+data.value"
                   :type="'Restriction'"
                   :learningpath="learningpathrestriction"
                   @update-visibility="handleVisibility"
@@ -79,7 +79,7 @@
               </template>
               <template #node-dropzone="{ data }">
                 <DropzoneNode
-                  :data="data"
+                  :data="data.id+data.name+data.title+data.value"
                   :editorview="true"
                 />
               </template>
@@ -88,7 +88,7 @@
               </template>
               <template #node-feedback="{ data }">
                 <FeedbackNode
-                  :data="data"
+                  :data="data.id+data.name+data.title+data.value"
                   :learningpath="learningpathrestriction"
                   :visibility="visibility_emitted"
                   @update-feedback="handleFeedback"
