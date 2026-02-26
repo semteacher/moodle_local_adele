@@ -70,11 +70,11 @@ class local_adele_generator extends testing_module_generator {
             }
             $i = 0;
             foreach ($nodedata['tree']['nodes'] as &$node) {
-                if (isset($node['data']['course_node_id'])) {
-                    $node['data']['course_node_id'] = [
-                        $courses[$i],
-                    ];
-                    $i++;
+                if (isset($node['data']['course_node_id']) && is_array($node['data']['course_node_id'])) {
+                    foreach ($node['data']['course_node_id'] as &$coursenode) {
+                        $coursenode = $courses[$i];
+                        $i++;
+                    }
                 }
             }
             $data['json'] = json_encode($nodedata);
